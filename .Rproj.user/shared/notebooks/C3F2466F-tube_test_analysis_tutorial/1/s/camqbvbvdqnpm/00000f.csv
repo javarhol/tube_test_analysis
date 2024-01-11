@@ -1,0 +1,3 @@
+"0","#import data"
+"0","tube_test_outcomes <- read.csv(""data/tube_test_outcomes.csv"", nrows=546)"
+"0","head(tube_test_outcomes)"
