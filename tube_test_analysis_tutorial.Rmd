@@ -1,4 +1,9 @@
-# Tube test analysis tutorial for determining dominance rank, stability, and hierarchy structure
+---
+title: "Tube test analysis tutorial"
+author: Justin Varholick, PhD
+date: January 11, 2024
+output: github_document
+---
 
 ## Background
 

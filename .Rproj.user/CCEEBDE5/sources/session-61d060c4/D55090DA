@@ -3,7 +3,7 @@
     "path": "~/Documents/GitHub/tube_test_analysis/tube_test_analysis_tutorial.Rmd",
     "project_path": "tube_test_analysis_tutorial.Rmd",
     "type": "r_markdown",
-    "hash": "1526351154",
+    "hash": "1385039647",
     "contents": "",
     "dirty": false,
     "created": 1704981944349.0,
@@ -12,8 +12,8 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "205,10",
-        "scrollLine": "189",
+        "cursorPosition": "6,0",
+        "scrollLine": "0",
         "rmdVisualMode": "false",
         "rmdVisualWrapConfigured": "true",
         "docOutlineVisible": "1",
@@ -21,11 +21,11 @@
         "rmdVisualCollapsedChunks": ""
     },
     "folds": "",
-    "lastKnownWriteTime": 1704995712,
+    "lastKnownWriteTime": 1704996476,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1704995712807,
+    "last_content_update": 1704996476931,
     "read_only": false,
     "read_only_alternatives": []
 }
