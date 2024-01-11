@@ -34,7 +34,7 @@ following publications: <https://doi.org/10.1038/s41598-018-24624-4> and
 
 You can download this R Markdown file and run the same code with your
 own data.  
-Then check out my other tutorials on graphing dominance data
+Then check out my other tutorials on graphing dominance data (forthcoming)
 
 ## Summary of data analytics used
 
