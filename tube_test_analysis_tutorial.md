@@ -34,16 +34,15 @@ following publications: <https://doi.org/10.1038/s41598-018-24624-4> and
 
 You can download this R Markdown file and run the same code with your
 own data.  
-Then check out my other tutorials on graphing dominance data
+Then check out my other tutorials on visualizing dominance data
+(forthcoming)
 
 ## Summary of data analytics used
 
 This work uses the R packages, dplyr and tidyr to organize the data into
 a usable form. The data is then run with the ‘compete’ package to
-determine the dominance ranks. Custom graphs were made with ggplot to
-visualize the changes in dominance rank across three weeks. The data is
-then filtered and analyzed per behavioral test (exploration, zero-maze,
-stress hormones, and body mass) with complementary plots.
+determine the dominance ranks using lists and lapply. All data is then
+written to separate .csv files for data visualization
 
 ## Determining the dominance ranks with the ‘compete’ package
 
