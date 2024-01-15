@@ -121,7 +121,7 @@ ds_per_cage <- ds_per_cage %>%
   separate_wider_delim(cage_animal_id, delim = ".", names = c("cage_id", "animal_id")) %>% 
   select(cage_id, animal_id, ds)
 
-write.csv(ds_per_week, "data/ds_per_cage.csv")
+write.csv(ds_per_cage, "data/ds_per_cage.csv")
 
 head(ds_per_cage)
 ```
