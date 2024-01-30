@@ -1,5 +1,5 @@
 "0","#split up long_data by day_id"
 "0","day_list <- split(long_data, as.factor(long_data$cage_day))"
 "0",""
-"0","#splitup long_dat by Cage (compound all 3 weeks)"
+"0","#splitup long_dat by Cage (compound all 3 trials)"
 "0","cage_list <- split(long_data, as.factor(long_data$cage_id))"

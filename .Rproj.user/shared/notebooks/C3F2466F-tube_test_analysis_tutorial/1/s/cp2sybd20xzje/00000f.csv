@@ -1,33 +1,3 @@
 "0","library(dplyr)"
-"2","
-Attaching package: ‘dplyr’
-
-"
-"2","The following objects are masked from ‘package:stats’:
-
-    filter, lag
-
-"
-"2","The following objects are masked from ‘package:base’:
-
-    intersect, setdiff, setequal, union
-
-"
 "0","library(tidyr)"
 "0","library(compete) #devtools::install_github('jalapic/compete') "
-"0",""
-"0","#custom scripts modified from the 'compete' package https://github.com/jalapic/compete "
-"0","getMinRank <- function(x){"
-"0","  matrix <- get_wl_matrix(x, ties=""keep"")"
-"0","  wins <- rowSums(matrix)"
-"0","  total_wins <- as.data.frame(wins)"
-"0","  total_wins$id <- rownames(total_wins)"
-"0","  total_wins <- mutate(total_wins, rank = rank(-wins, ties.method=""min""))"
-"0","  total_wins <- select(total_wins, id, wins, rank)"
-"0","  return(total_wins)"
-"0","}"
-"0",""
-"0","Landau <- function(x){"
-"0","  matrix <- get_wl_matrix(x, ties=""remove"")"
-"0","  devries(matrix)"
-"0","}"

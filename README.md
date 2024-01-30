@@ -161,9 +161,10 @@ rbind.
 
 ``` r
 #make a custom function that formats the table into a win-loss matrix and then runs the ds function.
+#the norm parameter should be used whenever comparing cages with different group-sizes
 get_ds <- function(x){
   matrix <- get_wl_matrix(x, ties="keep")
-  david_scores <- as.data.frame(ds(matrix, norm=FALSE, type = "D"))
+  david_scores <- as.data.frame(ds(matrix, norm=TRUE, type = "D"))
 }
 
 #get david scores for each item in the list
@@ -171,7 +172,7 @@ ds_per_week <- do.call(rbind, lapply(day_list, get_ds))
 
 #tidy data
 ds_per_week <- ds_per_week %>% 
-  rename(ds = `ds(matrix, norm = FALSE, type = "D")`) %>% 
+  rename(ds = `ds(matrix, norm = TRUE, type = "D")`) %>% 
   mutate(cage_day = rownames(.)) %>% 
   separate_wider_delim(cage_day, delim = ".", names = c("cage_day", "animal_id")) %>% 
   separate_wider_delim(cage_day, delim = "-", names = c("cage_id", "day")) %>% 
@@ -183,14 +184,14 @@ head(ds_per_week)
 ```
 
     ## # A tibble: 6 × 4
-    ##   cage_id animal_id day       ds
-    ##   <chr>   <chr>     <chr>  <dbl>
-    ## 1 110     110-1     d1     7    
-    ## 2 110     110-2     d1     3    
-    ## 3 110     110-3     d1    -4    
-    ## 4 110     110-4     d1    -5.5  
-    ## 5 110     110-5     d1    -0.500
-    ## 6 110     110-1     d2     6
+    ##   cage_id animal_id day      ds
+    ##   <chr>   <chr>     <chr> <dbl>
+    ## 1 110     110-1     d1      3.4
+    ## 2 110     110-2     d1      2.6
+    ## 3 110     110-3     d1      1.2
+    ## 4 110     110-4     d1      0.9
+    ## 5 110     110-5     d1      1.9
+    ## 6 110     110-1     d2      3.2
 
 We can use this same method for the cage_list
 
@@ -200,12 +201,12 @@ ds_per_cage <- do.call(rbind, lapply(cage_list, get_ds))
 
 #tidy data
 ds_per_cage <- ds_per_cage %>% 
-  rename(ds = `ds(matrix, norm = FALSE, type = "D")`) %>% 
+  rename(ds = `ds(matrix, norm = TRUE, type = "D")`) %>% 
   mutate(cage_animal_id = rownames(.)) %>% 
   separate_wider_delim(cage_animal_id, delim = ".", names = c("cage_id", "animal_id")) %>% 
   select(cage_id, animal_id, ds)
 
-write.csv(ds_per_week, "data/ds_per_cage.csv")
+write.csv(ds_per_cage, "data/ds_per_cage.csv")
 
 head(ds_per_cage)
 ```
@@ -213,12 +214,12 @@ head(ds_per_cage)
     ## # A tibble: 6 × 3
     ##   cage_id animal_id    ds
     ##   <chr>   <chr>     <dbl>
-    ## 1 38      38-2      -2.31
-    ## 2 38      38-3       1.23
-    ## 3 38      38-4      -1.85
-    ## 4 38      38-5       2.92
-    ## 5 41      41-1       2.31
-    ## 6 41      41-2      -3.85
+    ## 1 38      38-2      0.923
+    ## 2 38      38-3      1.81 
+    ## 3 38      38-4      1.04 
+    ## 4 38      38-5      2.23 
+    ## 5 41      41-1      2.46 
+    ## 6 41      41-2      1.23
 
 ### Dominance Rank
 
